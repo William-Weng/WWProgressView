@@ -34,7 +34,7 @@ final class ViewController: UIViewController {
         
         let height = myProgressView.frame.height * percentage / 100
         
-        myProgressView.updateHeight(height, radius: 4.0, startAngle: startAngle % 360)
+        myProgressView.updateHeight(height, radius: 4.0, startAngle: startAngle % 360, count: 5.0)
         startAngle += 5
         percentage += 0.1
     }

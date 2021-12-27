@@ -91,7 +91,7 @@ extension WWProgressView {
     ///   - height: [整體的高度](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/利用-cashapelayer-將-view-變成任意形狀-da7e5b700c70)
     ///   - radius: [弦波的半徑](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/將-view-變成任意形狀的三種方法-d43e6e4b8fb5)
     ///   - startAngle: 弦波的起始角度
-    ///   - count: [弦波的數量](https://zh.wikipedia.org/zh-tw/三角函数 )
+    ///   - count: [弦波的數量](https://zh.wikipedia.org/zh-tw/三角函数)
     /// - Returns: UIBezierPath
     private func waveBezierPathMaker(at contentView: UIView, height: Double = 100.0, radius: Double = 8.0, startAngle: Int = 90, count: Double = 1.0) -> UIBezierPath {
         
