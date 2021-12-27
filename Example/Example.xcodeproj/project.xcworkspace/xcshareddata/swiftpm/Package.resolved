@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "WWPrint",
+        "repositoryURL": "https://github.com/William-Weng/WWPrint",
+        "state": {
+          "branch": null,
+          "revision": "e4ad2863717465f224aa676f10a3a7ff1df58f7c",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "WWProgressView",
+        "repositoryURL": "/Users/william/Desktop/WWProgressView",
+        "state": {
+          "branch": "main",
+          "revision": "29d70264dfd5bf5b823f89dc916f42f5c3336f42",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

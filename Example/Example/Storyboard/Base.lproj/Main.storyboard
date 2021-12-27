@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RS1-K0-o1G" customClass="WWProgressView" customModule="WWProgressView">
+                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RS1-K0-o1G" secondAttribute="height" id="7z8-4Z-gSM"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="FullWater"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="progressImage" value="EmptyWater"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuR-9X-VA0">
+                                <rect key="frame" x="143" y="171" width="128" height="50"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="J5F-Zb-zgh"/>
+                                    <constraint firstAttribute="width" constant="128" id="e3g-HA-GzV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="~乎乾啦~">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="running:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fkc-CW-8gN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wuR-9X-VA0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4le-qC-VJs"/>
+                            <constraint firstItem="RS1-K0-o1G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RCC-1G-gIS"/>
+                            <constraint firstItem="RS1-K0-o1G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TeY-xy-TbM"/>
+                            <constraint firstItem="RS1-K0-o1G" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VZZ-XB-nnr"/>
+                            <constraint firstItem="RS1-K0-o1G" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ljb-qq-T9C"/>
+                            <constraint firstItem="RS1-K0-o1G" firstAttribute="top" secondItem="wuR-9X-VA0" secondAttribute="bottom" constant="20" id="uYX-yw-fN6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nvs-zi-2RQ"/>
+                    <connections>
+                        <outlet property="myProgressView" destination="RS1-K0-o1G" id="miu-GA-dVe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023.1884057971015" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="EmptyWater" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="FullWater" width="170.66667175292969" height="170.66667175292969"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

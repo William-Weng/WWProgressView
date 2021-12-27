@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WWProgressView" customModule="Example" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="dJQ-KO-emd"/>
+                <outlet property="fullImageView" destination="NWz-jx-Qeb" id="uPj-Ek-0s8"/>
+                <outlet property="progressImageView" destination="4Bx-Ih-lje" id="0Zk-az-klz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Bx-Ih-lje">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NWz-jx-Qeb">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="4Bx-Ih-lje" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="20S-vX-iyN"/>
+                <constraint firstItem="4Bx-Ih-lje" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5TK-CH-CtY"/>
+                <constraint firstAttribute="bottom" secondItem="4Bx-Ih-lje" secondAttribute="bottom" id="9lL-6a-eCv"/>
+                <constraint firstItem="NWz-jx-Qeb" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Ke2-uV-Agj"/>
+                <constraint firstItem="NWz-jx-Qeb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ONI-W2-uEB"/>
+                <constraint firstAttribute="bottom" secondItem="NWz-jx-Qeb" secondAttribute="bottom" id="gn4-GR-t9m"/>
+                <constraint firstItem="NWz-jx-Qeb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lqW-ab-pPW"/>
+                <constraint firstItem="4Bx-Ih-lje" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vTu-yT-e8C"/>
+            </constraints>
+            <point key="canvasLocation" x="140.57971014492756" y="139.95535714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
