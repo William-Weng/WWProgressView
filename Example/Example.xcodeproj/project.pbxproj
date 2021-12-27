@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D9C9D0D27795D3D00A817CA /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C9D0C27795D3D00A817CA /* Extension.swift */; };
-		3D9C9D1027795D9D00A817CA /* WWProgressView in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9C9D0F27795D9D00A817CA /* WWProgressView */; };
+		3D9C9D13277965DD00A817CA /* WWProgressView in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9C9D12277965DD00A817CA /* WWProgressView */; };
 		3DAC9C1927016E78006663C2 /* WWPrint in Frameworks */ = {isa = PBXBuildFile; productRef = 3DAC9C1827016E78006663C2 /* WWPrint */; };
 		3DBCD87426F198EF00522E3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCD87326F198EF00522E3B /* AppDelegate.swift */; };
 		3DBCD87826F198EF00522E3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCD87726F198EF00522E3B /* ViewController.swift */; };
@@ -33,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D9C9D1027795D9D00A817CA /* WWProgressView in Frameworks */,
+				3D9C9D13277965DD00A817CA /* WWProgressView in Frameworks */,
 				3DAC9C1927016E78006663C2 /* WWPrint in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,7 +121,7 @@
 			name = Example;
 			packageProductDependencies = (
 				3DAC9C1827016E78006663C2 /* WWPrint */,
-				3D9C9D0F27795D9D00A817CA /* WWProgressView */,
+				3D9C9D12277965DD00A817CA /* WWProgressView */,
 			);
 			productName = Example;
 			productReference = 3DBCD87026F198EF00522E3B /* Example.app */;
@@ -152,7 +152,7 @@
 			mainGroup = 3DBCD86726F198EF00522E3B;
 			packageReferences = (
 				3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */,
-				3D9C9D0E27795D9D00A817CA /* XCRemoteSwiftPackageReference "WWProgressView" */,
+				3D9C9D11277965DD00A817CA /* XCRemoteSwiftPackageReference "WWProgressView" */,
 			);
 			productRefGroup = 3DBCD87126F198EF00522E3B /* Products */;
 			projectDirPath = "";
@@ -389,9 +389,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3D9C9D0E27795D9D00A817CA /* XCRemoteSwiftPackageReference "WWProgressView" */ = {
+		3D9C9D11277965DD00A817CA /* XCRemoteSwiftPackageReference "WWProgressView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "file:///Users/william/Desktop/WWProgressView";
+			repositoryURL = "https://github.com/William-Weng/WWProgressView.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -408,9 +408,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3D9C9D0F27795D9D00A817CA /* WWProgressView */ = {
+		3D9C9D12277965DD00A817CA /* WWProgressView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3D9C9D0E27795D9D00A817CA /* XCRemoteSwiftPackageReference "WWProgressView" */;
+			package = 3D9C9D11277965DD00A817CA /* XCRemoteSwiftPackageReference "WWProgressView" */;
 			productName = WWProgressView;
 		};
 		3DAC9C1827016E78006663C2 /* WWPrint */ = {
