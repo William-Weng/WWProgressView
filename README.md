@@ -3,6 +3,7 @@
 
 A dynamically flowing progress bar.
 一個動態流動的進度條.
+IBDesignable.png
 
 ![](./Example.gif)
 
@@ -12,6 +13,7 @@ dependencies: [
     .package(url: "https://github.com/William-Weng/WWProgressView.git", .upToNextMajor(from: "1.0.0"))
 ]
 ```
+![](./IBDesignable.png)
 
 ### Example
 ```swift
