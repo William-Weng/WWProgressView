@@ -3,7 +3,6 @@
 
 A dynamically flowing progress bar.
 一個動態流動的進度條.
-IBDesignable.png
 
 ![](./Example.gif)
 
