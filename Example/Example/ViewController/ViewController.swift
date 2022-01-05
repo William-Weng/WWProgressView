@@ -42,6 +42,6 @@ final class ViewController: UIViewController {
         
         myProgressView.updateHeight(height, radius: 4.0, startAngle: startAngle % 360, count: 5.0)
         startAngle += 5
-        percentage -= 0.5
+        percentage -= 0.1
     }
 }
