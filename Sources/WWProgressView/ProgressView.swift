@@ -8,6 +8,7 @@
 import UIKit
 
 // MARK: - 動態的進度條
+@IBDesignable
 open class WWProgressView: UIView {
     
     @IBInspectable var fullImage: UIImage = UIImage()

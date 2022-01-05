@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WWProgressView" customModule="Example" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WWProgressView" customModule="WWProgressView">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="dJQ-KO-emd"/>
                 <outlet property="fullImageView" destination="NWz-jx-Qeb" id="uPj-Ek-0s8"/>

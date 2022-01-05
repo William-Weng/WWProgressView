@@ -9,7 +9,7 @@ A dynamically flowing progress bar.
 ### [Installation with Swift Package Manager](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/使用-spm-安裝第三方套件-xcode-11-新功能-2c4ffcf85b4b)
 ```
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWProgressView.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/William-Weng/WWProgressView.git", .upToNextMajor(from: "1.0.2"))
 ]
 ```
 ![](./IBDesignable.png)
@@ -23,7 +23,7 @@ final class ViewController: UIViewController {
 
     @IBOutlet weak var myProgressView: WWProgressView!
     
-    private var percentage: Double = 0.0
+    private var percentage: Double = 0
     private var timer: CADisplayLink?
     private var startAngle: Int = 0
     
@@ -33,6 +33,12 @@ final class ViewController: UIViewController {
     
     /// 使用定時器更新 (CADisplayLink)
     func update() {
+        
+        percentage = 100
+        
+        timer?.invalidate()
+        timer = nil
+        
         timer = CADisplayLink(target: self, selector: #selector(updatePercentage))
         timer?.preferredFramesPerSecond = 60
         timer?._fire()
@@ -44,9 +50,9 @@ final class ViewController: UIViewController {
         
         let height = myProgressView.frame.height * percentage / 100
         
-        myProgressView.updateHeight(height, radius: 4.0, startAngle: startAngle % 360)
+        myProgressView.updateHeight(height, radius: 4.0, startAngle: startAngle % 360, count: 5.0)
         startAngle += 5
-        percentage += 0.1
+        percentage -= 0.5
     }
 }
 ```

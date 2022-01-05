@@ -12,11 +12,11 @@
       },
       {
         "package": "WWProgressView",
-        "repositoryURL": "https://github.com/William-Weng/WWProgressView.git",
+        "repositoryURL": "/Users/william/Desktop/WWProgressView",
         "state": {
-          "branch": "main",
-          "revision": "55ad6bdd0b789324a2c5d7cca3368c47e741e3ef",
-          "version": null
+          "branch": null,
+          "revision": "b4fad2d2727b550844b08722d879c688948f7f47",
+          "version": "1.0.1"
         }
       }
     ]
