@@ -45,7 +45,7 @@ open class WWProgressView: UIView {
 }
 
 // MARK: - 公開function
-extension WWProgressView {
+public extension WWProgressView {
     
     /// [更新百分比](https://www.hangge.com/blog/cache/detail_2278.html)
     /// - Parameters:
@@ -53,7 +53,7 @@ extension WWProgressView {
     ///   - radius: [弦波的半徑](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/將-view-變成任意形狀的三種方法-d43e6e4b8fb5)
     ///   - startAngle: [弦波的起始角度](https://www.jianshu.com/p/3e0e25fd9b85)
     ///   - count: [弦波的數量](https://zh.wikipedia.org/zh-tw/三角函数)
-    public func updateHeight(_ height: Double = 0, radius: Double = 10.0, startAngle: Int = 0, count: Double = 1.0) {
+    func updateHeight(_ height: Double = 0, radius: Double = 10.0, startAngle: Int = 0, count: Double = 1.0) {
         
         let maskLayer = CAShapeLayer()
         let path = waveBezierPathMaker(at: contentView, height: height, radius: radius, startAngle: startAngle, count: count)
@@ -66,10 +66,10 @@ extension WWProgressView {
 }
 
 // MARK: - 小工具
-extension WWProgressView {
+private extension WWProgressView {
     
     /// 讀取Nib畫面 => 加到View上面
-    private func initViewFromXib() {
+    func initViewFromXib() {
         
         let bundle = Bundle.module
         let name = String(describing: Self.self)
@@ -81,7 +81,7 @@ extension WWProgressView {
     }
     
     /// 初始化設定
-    private func initSetting() {
+    func initSetting() {
         self.fullImageView.image = fullImage
         self.progressImageView.image = progressImage
     }
@@ -94,7 +94,7 @@ extension WWProgressView {
     ///   - startAngle: 弦波的起始角度
     ///   - count: [弦波的數量](https://zh.wikipedia.org/zh-tw/三角函数)
     /// - Returns: UIBezierPath
-    private func waveBezierPathMaker(at contentView: UIView, height: Double = 100.0, radius: Double = 8.0, startAngle: Int = 90, count: Double = 1.0) -> UIBezierPath {
+    func waveBezierPathMaker(at contentView: UIView, height: Double = 100.0, radius: Double = 8.0, startAngle: Int = 90, count: Double = 1.0) -> UIBezierPath {
         
         let path = UIBezierPath()
         let size = contentView.bounds.size

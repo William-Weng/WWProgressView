@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.6
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "WWProgressView",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v14),
     ],
     products: [
         .library(name: "WWProgressView", targets: ["WWProgressView"]),
@@ -14,7 +14,7 @@ let package = Package(
     dependencies: [
     ],
     targets: [
-        .target(name: "WWProgressView", dependencies: [], resources: [.process("Xib")]),
+        .target(name: "WWProgressView", resources: [.process("Xib"), .copy("Privacy")]),
     ],
     swiftLanguageVersions: [
         .v5
