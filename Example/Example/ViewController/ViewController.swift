@@ -14,34 +14,56 @@ final class ViewController: UIViewController {
     @IBOutlet weak var myProgressView: WWProgressView!
     
     private var percentage: Double = 0
-    private var timer: CADisplayLink?
-    private var startAngle: Int = 0
+    private var timer: Timer? = Timer()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initSetting()
+    }
     
-    override func viewDidLoad() { super.viewDidLoad() }
+    @IBAction func running(_ sender: UIButton) { runningAction() }
     
-    @IBAction func running(_ sender: UIButton) { update() }
+    @objc func timerAction(timer: Timer) { timerAction() }
+}
+
+// MARK: - WWProgressViewDelegate
+extension ViewController: WWProgressViewDelegate {
     
-    /// 使用定時器更新 (CADisplayLink)
-    func update() {
+    func percentage(_ progressView: WWProgressView) -> Double {
+        return percentage
+    }
+}
+
+// MARK: - 小工具
+private extension ViewController {
+    
+    /// 初始化設定
+    func initSetting() {
+        myProgressView.settings(fps: 60, radius: 5, startAngle: 0, angleSpeed: 3, count: 5, delegate: self)
+    }
+    
+    /// 開始更新
+    func runningAction() {
         
-        percentage = 100
+        percentage = 60
+        myProgressView.running()
         
         timer?.invalidate()
         timer = nil
-        
-        timer = CADisplayLink(target: self, selector: #selector(updatePercentage))
-        timer?.preferredFramesPerSecond = 60
-        timer?._fire()
+        timer = Timer()
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(Self.timerAction(timer:)), userInfo: nil, repeats: true)
     }
     
-    /// 更新進度條 (高度)
-    /// - Parameter sender: CADisplayLink
-    @objc private func updatePercentage(_ sender: CADisplayLink) {
+    /// 更新進度值
+    func timerAction() {
         
-        let height = myProgressView.frame.height * percentage / 100
+        if (percentage > 100.0) {
+            timer?.invalidate()
+            timer = nil
+            myProgressView.stop()
+            return
+        }
         
-        myProgressView.updateHeight(height, radius: 4.0, startAngle: startAngle % 360, count: 5.0)
-        startAngle += 5
-        percentage -= 0.1
+        percentage += 0.5
     }
 }
