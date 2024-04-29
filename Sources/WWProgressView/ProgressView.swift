@@ -70,12 +70,13 @@ public extension WWProgressView {
     
     /// [基本參數設定](https://zh.wikipedia.org/zh-tw/三角函数)
     /// - Parameters:
+    ///   - delegate: WWProgressViewDelegate
     ///   - fps: [畫面更新率](https://developer.apple.com/documentation/quartzcore/cadisplaylink/1648421-preferredframespersecond)
     ///   - radius: [弦波的半徑](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/將-view-變成任意形狀的三種方法-d43e6e4b8fb5)
     ///   - startAngle: [弦波的起始角度](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/利用-cashapelayer-將-view-變成任意形狀-da7e5b700c70)
     ///   - angleSpeed: [弦波的角度變化值](https://juejin.cn/post/7074759817738321956)
     ///   - count: 弦波的數量
-    func settings(fps: Int = 30, radius: Double = 3.0, startAngle: Int = 0, angleSpeed: Int = 5, count: Double = 5.0, delegate: WWProgressViewDelegate?) {
+    func settings(delegate: WWProgressViewDelegate, fps: Int = 30, radius: Double = 3.0, startAngle: Int = 0, angleSpeed: Int = 5, count: Double = 5.0) {
         self.fps = fps
         self.count = count
         self.radius = radius

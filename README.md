@@ -19,7 +19,7 @@ dependencies: [
 ### Function - 可用函式
 |函式|功能|
 |-|-|
-|settings(fps:radius:startAngle:angleSpeed:count:delegate:)|基本參數設定|
+|settings(delegate:fps:radius:startAngle:angleSpeed:count:)|基本參數設定|
 |running()|開始更新|
 |stop()|停止更新|
 
@@ -60,7 +60,7 @@ extension ViewController: WWProgressViewDelegate {
 private extension ViewController {
     
     func initSetting() {
-        myProgressView.settings(fps: 60, radius: 5, startAngle: 0, angleSpeed: 3, count: 5, delegate: self)
+        myProgressView.settings(delegate: self, fps: 60, radius: 5, startAngle: 0, angleSpeed: 3, count: 5)
     }
     
     func runningAction() {

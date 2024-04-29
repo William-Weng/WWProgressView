@@ -39,7 +39,7 @@ private extension ViewController {
     
     /// 初始化設定
     func initSetting() {
-        myProgressView.settings(fps: 60, radius: 5, startAngle: 0, angleSpeed: 3, count: 5, delegate: self)
+        myProgressView.settings(delegate: self, fps: 60, radius: 5, startAngle: 0, angleSpeed: 3, count: 5)
     }
     
     /// 開始更新
