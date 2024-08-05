@@ -12,10 +12,10 @@
     {
       "identity" : "wwprogressview",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/William-Weng/WWProgressView",
+      "location" : "https://github.com/William-Weng/WWProgressView.git",
       "state" : {
-        "revision" : "cf98a014522c25aa79c2bca37c737e584fffbef3",
-        "version" : "1.0.4"
+        "revision" : "4db13add4d580cfc614c8214132a4f4ead586232",
+        "version" : "1.1.1"
       }
     }
   ],
