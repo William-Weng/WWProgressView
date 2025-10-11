@@ -7,27 +7,14 @@
 
 import UIKit
 
-// MARK: - WWProgressViewDelegate
-public protocol WWProgressViewDelegate: AnyObject {
-    
-    /// 取得目前進度 (0% ~ 100%)
-    /// - Parameter progressView: WWProgressView
-    /// - Returns: Double
-    func percentage(_ progressView: WWProgressView) -> Double
-}
-
 // MARK: - 動態的進度條
-@IBDesignable
 open class WWProgressView: UIView {
-    
-    @IBInspectable var fullImage: UIImage = UIImage()
-    @IBInspectable var progressImage: UIImage = UIImage()
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var fullImageView: UIImageView!
     @IBOutlet weak var progressImageView: UIImageView!
     
-    public weak var delegate: WWProgressViewDelegate?
+    public weak var delegate: WWProgressView.Delegate?
     
     private var percentage: Double = 0
     private var timer: CADisplayLink?
@@ -49,34 +36,25 @@ open class WWProgressView: UIView {
     }
     
     override public func draw(_ rect: CGRect) {
-        
-        initSetting()
+        super.draw(rect)
         updateHeight()
-        
-        #if TARGET_INTERFACE_BUILDER
-        #endif
-    }
-    
-    /// [IB Designables: Failed to render and update auto layout status](https://stackoverflow.com/questions/46723683/ib-designables-failed-to-render-and-update-auto-layout-status)
-    override public func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        fullImageView.image = fullImage
-        contentView.prepareForInterfaceBuilder()
     }
 }
 
 // MARK: - 公開function
 public extension WWProgressView {
     
+    
     /// [基本參數設定](https://zh.wikipedia.org/zh-tw/三角函数)
     /// - Parameters:
-    ///   - delegate: WWProgressViewDelegate
+    ///   - delegate: WWProgressView.Delegate
     ///   - fps: [畫面更新率](https://developer.apple.com/documentation/quartzcore/cadisplaylink/1648421-preferredframespersecond)
     ///   - radius: [弦波的半徑](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/將-view-變成任意形狀的三種方法-d43e6e4b8fb5)
     ///   - startAngle: [弦波的起始角度](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/利用-cashapelayer-將-view-變成任意形狀-da7e5b700c70)
     ///   - angleSpeed: [弦波的角度變化值](https://juejin.cn/post/7074759817738321956)
     ///   - count: 弦波的數量
-    func settings(delegate: WWProgressViewDelegate, fps: Int = 30, radius: Double = 3.0, startAngle: Int = 0, angleSpeed: Int = 5, count: Double = 5.0) {
+    func settings(delegate: WWProgressView.Delegate, fullImage: UIImage?, progressImage: UIImage?, fps: Int = 30, radius: Double = 3.0, startAngle: Int = 0, angleSpeed: Int = 5, count: Double = 5.0) {
+        
         self.fps = fps
         self.count = count
         self.radius = radius
@@ -84,6 +62,8 @@ public extension WWProgressView {
         self.angleSpeed = angleSpeed
         self.count = count
         self.delegate = delegate
+        self.fullImageView.image = fullImage
+        self.progressImageView.image = progressImage
     }
     
     /// 開始更新 (CADisplayLink)
@@ -136,12 +116,6 @@ private extension WWProgressView {
         addSubview(contentView)
     }
     
-    /// 初始化設定
-    func initSetting() {
-        self.fullImageView.image = fullImage
-        self.progressImageView.image = progressImage
-    }
-    
     /// [弦波路徑產生器](https://www.hangge.com/blog/cache/detail_2278.html)
     /// - Parameters:
     ///   - contentView: [UIView](https://www.jianshu.com/p/3e0e25fd9b85)
@@ -187,28 +161,3 @@ private extension WWProgressView {
     }
 }
 
-// MARK: - CADisplayLink (static function)
-extension CADisplayLink {
-    
-    /// [產生CADisplayLink](https://www.hangge.com/blog/cache/detail_2278.html)
-    /// - Parameters:
-    ///   - target: AnyObject
-    ///   - selector: Selector
-    /// - Returns: CADisplayLink
-    static func _build(target: AnyObject, selector: Selector) -> CADisplayLink {
-        return CADisplayLink(target: target, selector: selector)
-    }
-}
-
-// MARK: - CADisplayLink (class function)
-extension CADisplayLink {
-    
-    /// [執行CADisplayLink Timer](https://ios.devdon.com/archives/922)
-    /// - Parameters:
-    ///   - runloop: [RunLoop](https://www.jianshu.com/p/b6ffd736729c)
-    ///   - mode: [RunLoop.Mode](https://www.hangge.com/blog/cache/detail_2278.html)
-    func _fire(to runloop: RunLoop = .main, forMode mode: RunLoop.Mode = .default) {
-        self.add(to: runloop, forMode: mode)
-        self.add(to: runloop, forMode: .tracking)
-    }
-}
